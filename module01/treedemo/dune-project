@@ -1,0 +1,26 @@
+(lang dune 3.16)
+
+(name treedemo)
+
+(generate_opam_files true)
+
+(source
+ (github username/reponame))
+
+(authors "Your Glorious Instructor")
+
+(maintainers "Your Glorious Instructor")
+
+(license LICENSE)
+
+(documentation https://url/to/documentation)
+
+(package
+ (name treedemo)
+ (synopsis "Building a tree ADT in OCaml")
+ (description "This project illustrates how to implement a tree ADT in OCaml")
+ (depends ocaml dune)
+ (tags
+  (topics "to describe" your project)))
+
+; See the complete stanza docs at https://dune.readthedocs.io/en/stable/reference/dune-project/index.html
