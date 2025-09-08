@@ -1,0 +1,58 @@
+2.1. (a+(b*C)/2)
+(Expr
+  (Term (Factor (Expr
+    (Expr (Term (Factor a)))
+    +
+    (Term
+      (Term (Factor (Expr
+        (Expr (Term (Factor b)))
+        *
+        (Term (Factor c))))))
+      /
+      (Factor 2))))))
+2.2. a*(3+b)*4
+(Expr
+  (Term
+    (Term
+      (Term (Factor a))
+      *
+      (Factor (Expr
+        (Expr (Term (Factor 3)))
+        +
+        (Term (Factor b))))))
+    *
+    (Factor 4)))
+2.3. 42*c+3*(a+b)
+(Expr
+  (Expr
+    (Term
+      (Term (Factor 42))
+      *
+      (Factor c)))
+  +
+  (Term
+    (Term (Factor 3))
+    *
+    (Factor (Expr
+      (Expr (Term (Factor a)))
+      +
+      (Term (Factor b)))))))
+
+
+3. Change the factor grammer to the following: 
+Factor → + Factor
+       | - Factor
+       | ( Expr )
+       | number
+       | identifier
+This allows positive and negative variations. For example:
+(12+-4)*8
+(Expr
+  (Term
+    (Term (Factor (Expr
+      (Expr
+        (Expr (Term (Factor 12)))
+        +
+        (Term (Factor (- (Factor 4)))))))))
+    *
+    (Factor 8)))
